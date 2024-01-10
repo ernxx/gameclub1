@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=0.25">
+<meta name="author" content="Smilegate Inc. (Formerly GameClub)">
+<meta name="description" content="Smilegate Inc.(Formerly GameClub)|Number 1 online game distributor in the philippines">
+<meta name="keywords" content="Crossfire online games, Crossfire online gaming philippines, gameclub, gameclub cf, gameclub login">
+<meta name="robots" content="all">
+<title>GameClub</title>
+<link href="//static.gameclub.cf/GameClub/images/favicon.ico" rel="shortcut icon" />
+<link href="//static.gameclub.cf/GameClub/plugins/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="//static.gameclub.cf/GameClub/plugins/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link href="//static.gameclub.cf/GameClub/plugins/dropit/dropit2.css" rel="stylesheet" />
+<link href="//static.gameclub.cf/GameClub/plugins/slick/slick.css" rel="stylesheet">
+<link href="//static.gameclub.cf/GameClub/plugins/slick/slick-theme.css" rel="stylesheet">
+<link href="//static.gameclub.cf/GameClub/css/style.css?ver=" rel="stylesheet" />
+<style>
+		.nav-outer {
+			border-bottom: 1px solid #e0e0e0;
+		}
+	</style>
+<link href="//static.gameclub.cf/GameClub/plugins/slick/slick.css" rel="stylesheet">
+<link href="//static.gameclub.cf/GameClub/plugins/slick/slick-theme.css" rel="stylesheet">
+<link href="//static.gameclub.cf/GameClub/plugins/fancybox/jquery.fancybox.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="//static.gameclub.cf/GameClub/css/policy.css" rel="stylesheet" />
+<link href="//static.gameclub.cf/GameClub/css/onlinemagazine.css" rel="stylesheet" />
+<script src="//static.gameclub.cf/GameClub/plugins/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/jquery-validation-1.15.0/dist/jquery.validate.min.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/slick/slick.min.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/bootstrap-3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/imageHover.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/dropit/dropit.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/js/ui.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/js/gameclub.js?ver=" type="text/javascript"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-MVJPRWQ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'GTM-MVJPRWQ');
+  </script>
+<script src="//static.gameclub.cf/GameClub/plugins/jquery/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/slick/slick.min.js"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/bootstrap-3.3.5/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/imageHover.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/dropit/dropit.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/fancybox/jquery.fancybox.js" type="text/javascript"></script>
+<script src="//static.gameclub.cf/GameClub/plugins/countUp.js" type="text/javascript"></script>
+<script>
+        $(function () {
+		var $access_token = '1536393676415307|j0pu6OnR7aA9geF2sPe4EgCOdMs';
+        	var $fb_pages = ['cfphofficialpage','WeaponsPHpage','lovebeatphofficial','GameClubOfficialPage'];
+        	//var $res = [];
+
+        	function getFanCount(fbpages, token, fan) {
+        		for(var i = 0; i < fbpages.length; i++){
+	        		$.ajax({
+		        		url: 'https://graph.facebook.com/v2.11/' + $fb_pages[i] + '?fields=fan_count&access_token=' + token,
+		        		success: function(data){
+		        			//$('#' + $fb_pages[i]).attr('data-count', data.fan_count);
+		        			fan.push(data.fan_count);
+		        		}
+		        	});
+	        	}
+
+	        	return fan;
+        	}
+
+        	function gg(page, token) {
+        		$.ajax({
+		        		url: 'https://graph.facebook.com/v2.11/' + page + '?fields=fan_count&access_token=' + token,
+		        		success: function(data){
+		        			$('#' + page).attr('data-count', data.fan_count);
+		        		}
+		        	});
+        	}
+
+        	//var $fan = getFanCount($fb_pages, $access_token, arr = []);
+
+        	gg('GameClubOfficial', $access_token);
+        	gg('cfphofficial', $access_token);
+        	gg('lovebeatph', $access_token);
+        	gg('WeaponsPH', $access_token);
+
+
+            $(".menu").dropit();
+            $(".carousel").carousel();
+            $("#promomodal").modal();
+
+            $('.wheel').slick({
+                infinite: false,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                focusOnSelect: false,
+                prevArrow: $('.prev'),
+                nextArrow: $('.next')
+            });
+
+            $('.gamelist > a').click(function (e) {
+                e.preventDefault();
+            });
+
+            $('.showvid').on('click', function () {
+                $('#video').modal('show');
+            });
+
+            $('.playvid').hide();
+            $('.video').hover(function () {
+                $(this).find('.image').css({ 'opacity': '.5' });
+                $(this).find('.playvid').clearQueue().fadeIn(120);
+            }, function () {
+                $(this).find('.image').css({ 'opacity': '1' });
+                $(this).find('.playvid').clearQueue().fadeOut(120);
+            });
+
+            $('.featuredbox').hover(function () {
+                $(this).find('.image').css({ 'opacity': '1' });
+            }, function () {
+                $(this).find('.image').css({ 'opacity': '.8' });
+            });
+
+            $('.game').hover(function () {
+                $(this).find('.descbox').clearQueue().animate({
+                    'margin-top': '-325px'
+                }, 300);
+            }, function () {
+                $(this).find('.descbox').clearQueue().animate({
+                    'margin-top': '0'
+                }, 300);
+            });
+
+            /* $('.carousel-indicators').hover(function() {
+                $(this).removeClass('enabled');
+            }, function() {
+                $(this).addClass('enabled');
+            }); */
+
+            /*
+            var body = $('.bg');
+            var base = $('.slide6-inner');
+            $(window).scroll(function () {
+                body.style.backgroundPosition = "0px " + ( 830 -(Math.max(doc.scrollTop, body.scrollTop) / 4) ) + "px";
+            }); */
+
+            /* Smooth slide animation */
+            $('.slideTo').on('click', function (e) {
+                e.preventDefault();
+                var slideTo = $(this).attr('data-slide');
+
+                $('html, body').animate({
+                    scrollTop: $('#' + slideTo).offset().top
+                }, 700);
+            });
+            /* Smooth slide animation */
+
+            /* Count up animation - Likes */
+            var fired = false;
+            $(window).scroll(function () {
+                var hT = $('.slide4-inner').offset().top - 270,
+                    hH = $('.slide4-inner').outerHeight(),
+                    wH = $(window).height(),
+                    wS = $(this).scrollTop();
+
+                if (wS > (hT + hH - wH) && fired === false) {
+
+                    var optionsL = {
+                        useEasing: true,
+                        useGrouping: true,
+                        separator: ',',
+                        decimal: '.',
+                        suffix: ' Likes'
+                    };
+
+                    $.each($('.likes'), function () {
+                        var end = $(this).attr('data-count');
+                        var trigger = new CountUp(this, 0, end, 0, 5, optionsL);
+
+                        trigger.start();
+                    });
+                    fired = true;
+                }
+            });
+            /* Count up animation - Likes */
+
+            /* Count up animation - Audience */
+            var fired2 = false;
+            $(window).scroll(function () {
+                var hT = $('.slide3-inner').offset().top - 270,
+                    hH = $('.slide3-inner').outerHeight(),
+                    wH = $(window).height(),
+                    wS = $(this).scrollTop();
+
+                if (wS > (hT + hH - wH) && fired2 === false) {
+
+                    var options = {
+                        useEasing: true,
+                        useGrouping: true,
+                        separator: ',',
+                        decimal: '.'
+                    };
+
+                    var custom = {
+                        useEasing: true,
+                        useGrouping: true,
+                        separator: ',',
+                        decimal: '.',
+                        suffix: ' +'
+                    };
+
+                    $.each($('.number'), function () {
+                        var end2 = $(this).attr('data-count');
+                        var trigger2 = new CountUp(this, 0, end2, 0, 5, options);
+
+                        new CountUp('user', 0, 30000000, 0, 5, custom).start();
+                        trigger2.start();
+                    });
+                    fired2 = true;
+                }
+            });
+            /* Count up animation - Audience */
+
+            /* Fancy Box*/
+            $('.fancybox').fancybox();
+            /* Fancy Box */
+        });
+    </script>
+</head>
+<body>
+<script type="text/javascript" src="//static.gameclub.cf/Global/js/GameClubGnB.js?ver=20191204"></script>
+<div class="slide1-outer row">
+
+<div class="slide1-inner clearfix" id="slide1">
+<div class="image">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide1b_laptop.png" alt>
+</div>
+<div class="what-gom">
+<div class="title">
+What is Gameclub
+Online Magazine?
+</div>
+<div class="text">
+The Gameclub Online Magazine is a campaign by
+Gameclub Philippines that focuses on digital means of
+delivering fresh game related contents to the general
+public, online. A way to giveback to the Gameclub
+community through entertainment videos, promos, viral
+content, and useful facts on gaming.
+</div>
+<div class="buttons">
+<div class="button-container">
+<div class="btn buttonpaper slideTo" data-slide="slide6">
+WHAT WE OFFER
+</div>
+<div class="btn buttonpaper slideTo" data-slide="slide2">
+WHY ADVERTISE
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> 
+<div class="slide2-outer row">
+
+<div class="slide2-inner" id="slide2">
+<div class="whygc">
+WHY CHOOSE GAMECLUB?
+<div class="whygc-sub">
+Gameclub is one of the leading online game publishers in the Philippines.
+</div>
+</div>
+</div>
+</div> 
+<div class="slide3-outer row">
+
+<div class="slide3-inner clearfix" id="slide3">
+<div class="left-box">
+<div class="title">
+We Have The
+Right Audience
+For You
+</div>
+<div class="text">
+Gameclub developed the largest online gaming community with an ever-increasing player base of 30 Million Users in the country, making it one of the most popular online destination for Filipino gamers.
+</div>
+<div class="image clearfix">
+<div class="female pull-left">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide3_female.jpg" alt>
+<div class="sub">Female</div>
+<div class="number">45.85%</div>
+</div>
+<div class="male pull-right">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide3_male.jpg" alt>
+<div class="sub">Male</div>
+<div class="number">54.15%</div>
+</div>
+</div>
+</div>
+<div class="right-box">
+<div class="box1">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide3_box1.jpg" alt>
+<div class="number" id="user" data-count="30000000">
+0
+</div>
+<div class="sub">
+User Player Base
+</div>
+</div>
+<div class="box2">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide3_box2.jpg" alt>
+<div class="number" data-count="1970246" style="margin-top: 40px;">
+0
+</div>
+<div class="sub">
+Sessions
+</div>
+</div>
+<div class="box3">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide3_box3.jpg" alt>
+<div class="number" data-count="1436063">
+0
+</div>
+<div class="sub">
+Active Users
+</div>
+</div>
+<div class="box4">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide3_box4.jpg" alt>
+<div class="number" data-count="9941062">
+0
+</div>
+<div class="sub">
+Page Views
+</div>
+</div>
+</div>
+</div>
+</div> 
+<div class="row" style="min-width: 1270px; max-width: 1920px; background-color: /* #181717*/ #fff; margin-left: 0; margin-right: 0; height: 130px; margin: 0 auto;">
+<div class="analytics-btn">
+<a href="//static.gameclub.cf/GameClub/images/gom/analytics.png" class="fancybox">
+Monthly Google Analytics Website Data as of 7/20/2017
+</a>
+</div>
+</div> 
+
+
+<div class="slide4-outer row">
+
+<div class="slide4-inner clearfix" id="slide4">
+<div class="game-thumbs">
+<div class="thumbs-inner clearfix">
+<div class="thumb thumb1">
+<a href="https://www.facebook.com/GameClubOfficial/" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide4_img1_borderless.jpg" alt>
+</a>
+<div class="likes" data-count id="GameClubOfficial">
+0
+</div>
+</div>
+<div class="thumb thumb2">
+<a href="https://www.facebook.com/cfphofficial/?ref=br_rs" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide4_img2_borderless.jpg" alt>
+</a>
+<div class="likes" data-count id="cfphofficial">
+0
+</div>
+</div>
+</div>
+<div class="thumbs-inner clearfix">
+<div class="thumb thumb3">
+<a href="https://www.facebook.com/lovebeatph/" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide4_img3_borderless.jpg" alt>
+</a>
+<div class="likes" data-count id="lovebeatph">
+0
+</div>
+</div>
+<div class="thumb thumb4">
+<a href="https://www.facebook.com/WeaponsPH/?fref=pb&hc_location=profile_browser" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide4_img4_borderless.jpg" alt>
+</a>
+<div class="likes" data-count id="WeaponsPH">
+0
+</div>
+</div>
+</div>
+</div>
+<div class="social-media">
+<div class="outer">
+<div class="middle">
+<div class="inner">
+<div class="title">
+Well Connected <br/>
+On Social Media
+</div>
+<div class="text">
+Gameclub and its games, Crossfire, Love Beat, and Weapons of War, independently get a generous amount of followers, and audiences on their respective avenues.
+</div>
+<div class="clearfix">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide4_fblogo.png" alt>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> 
+<div class="row" style="min-width: 1270px; background-color: /* #181717; */ #fff; margin-left: 0; margin-right: 0; height: 130px;"></div> 
+<div class="slide5-outer">
+
+<div class="slide5-inner clearfix" id="slide5">
+<div class="annual-events">
+<div class="outer">
+<div class="middle">
+<div class="inner">
+<div class="title">
+Annual Events Means New Opportunities
+</div>
+<div class="text">
+Gameclub hosts national events throughout the country, yearly. This opportunity will help you grow your market and introduce your brand into new audiences.
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cf-events">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide5_tour.jpg" alt>
+</div>
+</div>
+</div> 
+<div class="row" id="slide6" style="min-width: 1270px; margin: 150px 0 0 0; font-family: 'altehaasgrostesk'; font-size: 56px; color: #414141; text-align: center; padding-bottom: 50px;">
+WHAT WE OFFER
+</div>
+<div class="slide6-outer row">
+
+<div class="slide6-inner">
+
+<div class="content">
+<div class="tri clearfix">
+<div class="first">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide6_globe.jpg">
+<div class="title">
+GAMECLUB <br/>
+WEBSITE
+</div>
+<div class="text">
+Offers Ad Spaces from Banner <br/>
+Ads, Website Promotions, and <br/>
+Content Publishing.
+</div>
+</div>
+<div class="second">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide6_fb.jpg">
+<div class="title">
+FACEBOOK
+</div>
+<div class="text">
+Facebook Promotions, Viral <br/>
+Contents, and Video Content.
+</div>
+</div>
+<div class="third">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide6_calendar.jpg">
+<div class="title">
+NATIONAL <br/>
+EVENTS
+</div>
+<div class="text">
+Games event partnership <br/>
+through booth spaces, and <br/>
+other event mileages.
+</div>
+</div>
+</div>
+</div>
+
+<div class="partner" style="margin-top: 50px;">
+<div class="btn buttonpaper slideTo" data-slide="slide7">
+PARTNER WITH US
+</div>
+</div>
+</div>
+</div> 
+<div class="row" style="min-width: 1270px; margin-left: 0; margin-right: 0; height: 150px;"></div>
+<div class="slide7-outer row">
+
+<div class="slide7-inner" id="slide7" style="display: table;">
+<div class style="display: table-cell; vertical-align: middle;">
+<div class="title">
+Contact Us
+</div>
+<div class="sub">
+Let's start a project, schedule a meet-up, or let us know how you're doing.
+</div>
+<div class="clearfix contact">
+<div class="icons">
+<img src="//static.gameclub.cf/GameClub/images/gom/mail.png" alt>
+<div class="text">
+Gameclub Corporate
+</div>
+<div class="email">
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e885899a838d9c81868fa88f8a98848991c69880">[email&#160;protected]</a>
+</div>
+</div>
+<div class="icons">
+<img src="//static.gameclub.cf/GameClub/images/gom/gamepad.png" alt>
+<div class="text">
+Games Support & Inquiry
+</div>
+<div class="email">
+<a href="http://support.gameclub.cf/" target="_blank">
+support.gameclub.cf
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div> 
+<div class="slide8-outer row" style>
+
+<div class="slide8-inner" id="slide8">
+<div class="title">
+PARTNERS WE HAVE WORKED WITH
+</div>
+<img src="//static.gameclub.cf/GameClub/images/gom/slide8_partners.jpg" alt>
+</div>
+</div> 
+<div class="row" style="min-width: 1270px; margin-left: 0; margin-right: 0; height: 130px;"></div>
+<div class="slide9-outer row">
+
+<div class="slide9-inner" id="slide9">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide9_partners.jpg" alt>
+</div>
+</div> 
+<div class="row" style="min-width: 1270px; margin-left: 0; margin-right: 0; height: 100px;"></div>
+<div class="slide10-outer row">
+
+<div class="slide10-inner clearfix" id="slide10">
+<div class="image">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide10_gadgets.png" alt>
+</div>
+<div class="connect">
+<div class="title">
+Connect With Us.
+</div>
+<div class="media clearfix">
+<div class="icon">
+<a href="https://www.facebook.com/GameClubOfficial/" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide10_fb.png" alt>
+</a>
+</div>
+<div class="icon">
+<a href="https://www.youtube.com/gameclubtv" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide10_utube.png" alt>
+</a>
+</div>
+<div class="icon">
+<a href="https://www.linkedin.com/organization/17981022" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide10_lin.png" alt>
+</a>
+</div>
+<div class="icon">
+<a href="https://www.gameclub.cf/" target="_blank">
+<img src="//static.gameclub.cf/GameClub/images/gom/slide10_idunno.png" alt>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div> 
+
+<div class="gom-sidenav">
+<a href target="_blank">
+<div class="button" style="background: #252525;">
+<img src="//static.gameclub.cf/GameClub/images/gom/side_gom.png" alt>
+</div>
+</a>
+<a href="https://www.facebook.com/GameClubOfficial/" target="_blank">
+<div class="button" style="background: #385b9d;">
+<img src="//static.gameclub.cf/GameClub/images/gom/side_fb.png" alt>
+</div>
+</a>
+<a href="https://www.youtube.com/gameclubtv" target="_blank">
+<div class="button" style="background: #cd4141;">
+<img src="//static.gameclub.cf/GameClub/images/gom/side_utube.png" alt>
+</div>
+</a>
+<a href="https://www.linkedin.com/organization/17981022" target="_blank">
+<div class="button" style="background: #0075b4;">
+<img src="//static.gameclub.cf/GameClub/images/gom/side_lin.png" alt>
+</div>
+</a>
+<a href="http://forums.gameclub.cf/" target="_blank">
+<div class="button" style="background: #f79517;">
+<img src="//static.gameclub.cf/GameClub/images/gom/side_forum.png" alt>
+</div>
+</a>
+</div>
+
+<footer class="footer">
+<div class="row">
+<div class="container">
+<div style="float: left;">
+<img src="data:image/png;base64,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">
+</div>
+<div style="float: left;">
+<div>
+<a href="javascript:void(0)" onclick="about()">About Us</a>
+&nbsp; &nbsp;| &nbsp; &nbsp;
+
+<a href class="slideTo" data-slide="slide2">Advertise With Us</a>
+&nbsp; &nbsp;| &nbsp; &nbsp;
+<a href="javascript:void(0)" onclick="privacy()">Privacy Policy</a>
+&nbsp; &nbsp;| &nbsp; &nbsp;
+<a href="javascript:void(0)" onclick="terms()">Terms of Service</a>
+&nbsp; &nbsp;| &nbsp; &nbsp;
+<a href="javascript:void(0)" onclick="eula()">EULA</a>
+&nbsp; &nbsp;| &nbsp; &nbsp;
+<a href="javascript:void(0)" onclick="player()">Player Policies</a>
+</div>
+<div style="color: #666666;font-size: 12px;">
+&copy; 2024 Smilegate. All rights reserved.<br/> Trademarks referenced herein belong to their respective owners.
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
